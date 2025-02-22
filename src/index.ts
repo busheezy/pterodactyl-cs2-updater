@@ -6,7 +6,7 @@ import { getServerVersionFromInf } from './utils/getServerVersionFromInf';
 import { isServerVersionNewer } from './utils/isServerVersionNewer';
 import { failureAlert, successAlert } from './services/discord';
 import { getCs2Servers } from './services/ptero/getCs2Servers';
-import { ensureCacheFileExists, getLastUpdate, setLastUpdateNow } from './services/lastUpdateCache';
+import { ensureCacheFileExists, getLastUpdate, setLastUpdateNow } from './lastUpdateCache';
 import { differenceInMinutes } from 'date-fns';
 
 async function run() {

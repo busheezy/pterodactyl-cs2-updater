@@ -6,6 +6,14 @@ export interface PteroServer {
   attributes: ServerAttributes;
 }
 
+export type ServerStatus =
+  | 'installing'
+  | 'install_failed'
+  | 'reinstall_failed'
+  | 'suspended'
+  | 'restoring_backup'
+  | null;
+
 export interface ServerAttributes {
   server_owner: boolean;
   identifier: string;
@@ -15,8 +23,7 @@ export interface ServerAttributes {
   invocation: string;
   sftp_details: SftpDetails;
   description: string;
-  is_suspended: boolean;
-  is_installing: boolean;
+  status: ServerStatus;
 }
 
 export interface SftpDetails {

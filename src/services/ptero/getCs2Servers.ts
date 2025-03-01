@@ -11,11 +11,7 @@ export async function getCs2Servers() {
       return false;
     }
 
-    if (server.attributes.is_installing) {
-      return false;
-    }
-
-    if (server.attributes.is_suspended) {
+    if (server.attributes.status !== null) {
       return false;
     }
 

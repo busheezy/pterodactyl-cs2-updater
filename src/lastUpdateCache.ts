@@ -1,7 +1,7 @@
 import * as path from 'node:path';
 import { promises as fs } from 'node:fs';
 
-const cachePath = path.join(__dirname, '..', '..', 'cache.json');
+const cachePath = path.join(__dirname, '..', 'cache.json');
 
 type LastUpdateCache = Record<string, Date | undefined>;
 

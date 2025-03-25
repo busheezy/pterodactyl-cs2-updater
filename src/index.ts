@@ -17,6 +17,10 @@ async function run() {
 
   await Bluebird.mapSeries(servers, async (server) => {
     try {
+      if (server.attributes.name.includes('10 Man')) {
+        return;
+      }
+
       const lastUpdated = await getLastUpdate(server.attributes.identifier);
 
       if (lastUpdated && differenceInMinutes(new Date(), lastUpdated) < 30) {
